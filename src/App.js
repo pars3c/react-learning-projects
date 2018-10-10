@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import logo from './logo.svg';
 import './App.css';
 
 
-function Cars(data){
-  return "The brand of the car is: " + data.brand + " and the model is: " + data.model;
+function User(data){
+  return ": " + data.brand + " and the model is: " + data.model;
 };
 
 const data = {
@@ -13,10 +14,40 @@ const data = {
 };
 
 const element = React.createElement(
-  'h1',
+  'p',
   {className: 'greeting'},
-  'Hello, wsorld!'
+  User(data)
 );
+
+class ProfileViewer extends Component {
+  render(){
+    return (
+      <Row>
+      <Col sm="6" md="4">
+        <Card body>
+          <CardTitle>Special Title Treatment</CardTitle>
+          <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+          <Button>Go somewhere</Button>
+        </Card>
+      </Col>
+      <Col sm="6" md="4">
+        <Card body>
+          <CardTitle>Special Title Treatment</CardTitle>
+          <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+          <Button>Go somewhere</Button>
+        </Card>
+      </Col>
+      <Col sm="6">
+        <Card body>
+          <CardTitle>Special Title Treatment</CardTitle>
+          <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+          <Button>Go somewhere</Button>
+        </Card>
+      </Col>
+    </Row>
+    );
+  }
+}
 
 
 class Hello extends Component {
@@ -27,4 +58,4 @@ class Hello extends Component {
   }
 }
 
-export default Hello;
+export default ProfileViewer;
