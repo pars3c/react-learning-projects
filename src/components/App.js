@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Form, FormControl, Button } from 'react-bootstrap'; 
+import { Form, FormControl, Button } from 'react-bootstrap';
+import AgeStats from './AgeStats';
 import './App.css'
 class App extends Component {
     constructor(){
         super();
         this.state = {
             newDate: '',
+            birthDay: '1991-07-23',
         }
     }
     changeBirthday() {
         console.log(this.state);
+        this.setState({ birthDay: this.state.newDate })
     }
     render(){
         return (
@@ -25,6 +28,8 @@ class App extends Component {
                     <Button
                     onClick={() => this.changeBirthday()}
                     >Submit</Button>
+
+                    <AgeStats date={this.state.birthDay}/>
                 </Form>
             </div>
 
