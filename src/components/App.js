@@ -18,7 +18,7 @@ class App extends Component {
         return (
             
             <div className="App">
-                <Form inline>
+                <Form >
                     <h2>Please type in your birthday</h2>
                     <FormControl 
                     type='date'
